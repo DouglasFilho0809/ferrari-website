@@ -1,0 +1,182 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+body{
+    font-size:20px;
+    color: white;
+    overflow: hidden;
+
+}
+header{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 600px;
+    gap: 50px;
+    align-items: center;
+    width: 70vw;
+    z-index: 2;
+
+    & img{
+        width: 80px;
+        height: 100px;
+    }
+    & nav{
+        & ul{
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+        }
+    }
+}
+section{
+    background-image: radial-gradient(rgb(158, 25, 25), black);
+    height: 100vh;
+    position: relative;
+
+    & .list{
+        width: 70vw;
+        margin: auto;
+        height: 100%;
+        position: relative;
+
+        & .item {
+            position: absolute;
+            inset: 0;
+
+            & .car-img{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+
+                & img{
+                    width: 100%;
+                    transform: rotate(-20deg);
+                }
+            }
+            & .content{
+                position: absolute;
+                right: 100px;
+                width: 70%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: end;
+                gap: 20px;
+
+                & .car-motor{
+                    font-weight: bold;
+                }
+
+                & h2{
+                    font-size: 4em;
+                    line-height: 1em;
+                    font-family: "League Gothic", sans-serif;
+                }
+                & .description{
+                    color: white;
+                    font-size: 12px;
+                    text-align: right;
+                    max-width: 300px;
+                }
+                & .information{
+                    border-radius: 30px;
+                    height: 35px;
+                    width: 120px;
+                    text-transform: uppercase;
+                    border: 1px solid rgb(251, 250, 250);
+                    background-color: transparent;
+                    color: rgb(248, 244, 244);
+                    font-weight: 50;
+                    cursor: pointer;
+                    font-family: "League Gothic", sans-serif;
+                }
+
+            }
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            height: 200px;
+            top: 50%;
+            width: 100%;
+            border-top: 1px solid white;
+        }
+    }
+    .indicators{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 200px;
+        width: 90vw;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 15px;
+
+        & .number{
+            font-size: 5em;
+            
+        }
+        & ul{
+            display: flex;
+            gap: 10px;
+
+            & li{
+                width: 50px;
+                height: 5px;
+                background-color: white;
+                border-radius: 5px;
+                transition: 0.5s;
+            }
+            & .active{
+                background-color: rgb(132, 30, 30);
+            }
+        }
+
+    }
+
+    .arrows{
+        width: 70vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -25px);
+        display: flex;
+        justify-content: space-between;
+
+    & button:nth-child(1){
+        & img{
+            transform: scale(-1);
+        }
+    }
+
+    & button{
+        top: 60%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+
+        & img{
+            width: 50px;
+            margin-top: 0px;
+            cursor: pointer;
+        }
+        
+        &:hover{
+            background-color: white;
+        }
+    }
+}
+
+}
